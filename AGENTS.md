@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep BuildAI as a browser-only concept design workspace until a persistent backend is explicitly requested; this prevents illustrative engineering outputs from being mistaken for certified calculations.
