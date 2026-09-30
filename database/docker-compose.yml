@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: buildai_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: buildai_user
+      POSTGRES_PASSWORD: buildai_secure_password
+      POSTGRES_DB: buildai_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/01_init.sql:ro
+      - ./seed.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
+
+volumes:
+  pgdata:
